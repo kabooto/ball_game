@@ -11,7 +11,7 @@ screen = pygame.display.set_mode(size)
 finished = False
 
 pygame.display.update()
-clock = pygame.time.Clock
+clock = pygame.time.Clock()
 
 while not finished:
     clock.tick(FPS)
