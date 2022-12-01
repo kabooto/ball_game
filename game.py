@@ -23,7 +23,9 @@ while not finished:
     screen.fill('Black')
     for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONDOWN:
-            print(pygame.mouse.get_pos())
+            if pygame.mouse.get_pos() == (0, 0):
+                print(pygame.mouse.get_pos())
+                break
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 finished = True
