@@ -4,7 +4,7 @@ from random import randint
 
 pygame.init()
 
-FPS = 2
+FPS = 1
 size = [500, 500]
 screen = pygame.display.set_mode(size)
 
@@ -23,9 +23,11 @@ while not finished:
     screen.fill('Black')
     for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONDOWN:
-            print(pygame.mouse.get_pos())
-            if pygame.mouse.get_pos() == (5, 5):
-                finished = True
+            mouse_pos = pygame.mouse.get_pos()
+            print(mouse_pos)
+            if mouse_pos[0] > x - 5 and mouse_pos[0] < x + 5:
+                if mouse_pos[1] > y - 5 and mouse_pos[1] < y + 5:
+                    finished = True
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 finished = True
