@@ -15,6 +15,12 @@ clock = pygame.time.Clock()
 
 while not finished:
     clock.tick(FPS)
+    x = randint(0, 500)
+    y = randint(0, 500)
+    rand_color = (randint(0, 255), randint(0, 255), randint(0, 255))
+    circle(screen, rand_color, (x, y), 10)
+    pygame.display.update()
+    screen.fill('Black')
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
