@@ -24,7 +24,7 @@ while not finished:
     for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONDOWN:
             print(pygame.mouse.get_pos())
-            if pygame.mouse.get_pos() == (0, 0):
+            if pygame.mouse.get_pos() == (5, 5):
                 finished = True
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
