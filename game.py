@@ -25,8 +25,8 @@ while not finished:
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = pygame.mouse.get_pos()
             print(mouse_pos)
-            if mouse_pos[0] > x - 5 and mouse_pos[0] < x + 5:
-                if mouse_pos[1] > y - 5 and mouse_pos[1] < y + 5:
+            if mouse_pos[0] > x - 5 or mouse_pos[0] < x + 5:
+                if mouse_pos[1] > y - 5 or mouse_pos[1] < y + 5:
                     finished = True
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
