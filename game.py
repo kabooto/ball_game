@@ -12,6 +12,7 @@ finished = False
 
 pygame.display.update()
 clock = pygame.time.Clock()
+score = 0
 
 while not finished:
     clock.tick(FPS)
@@ -27,7 +28,8 @@ while not finished:
             print(mouse_pos)
             if mouse_pos[0] > x - 5 or mouse_pos[0] < x + 5:
                 if mouse_pos[1] > y - 5 or mouse_pos[1] < y + 5:
-                    finished = True
+                    score += 1
+                    print('Your score is: ', score)
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 finished = True
