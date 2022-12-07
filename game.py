@@ -12,11 +12,11 @@ finished = False
 
 pygame.display.update()
 clock = pygame.time.Clock()
-
+score = 0
 while not finished:
     clock.tick(FPS)
-    x = randint(0, 500)
-    y = randint(0, 500)
+    x = 250#randint(5, 495)
+    y = 250#randint(5, 495)
     rand_color = (randint(0, 255), randint(0, 255), randint(0, 255))
     circle(screen, rand_color, (x, y), 10)
     pygame.display.update()
@@ -25,8 +25,7 @@ while not finished:
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = pygame.mouse.get_pos()
             print(mouse_pos)
-            if mouse_pos[0] > x - 5 or mouse_pos[0] < x + 5:
-                if mouse_pos[1] > y - 5 or mouse_pos[1] < y + 5:
+            if mouse_pos > (x, y) and mouse_pos < (x + 5, y + 5):
                     finished = True
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
